@@ -8,6 +8,7 @@ import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
+import { passUserToView } from './middleware/middleware.js'
 // create the express app
 const app = express()
 
@@ -20,6 +21,7 @@ import('./config/passport.js')
 // require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as profilesRouter } from './routes/profiles.js'
 
 // view engine setup
 app.set(
@@ -55,9 +57,13 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+// custom middleware
+app.use(passUserToView)
+
 // router middleware
 app.use('/', indexRouter)
-app.use('/auth', authRouter)
+app.use('/auth', authRouter) 
+app.use('/profiles', profilesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
