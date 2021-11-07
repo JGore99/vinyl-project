@@ -5,7 +5,15 @@
   <section class="bio-details">
     <h1>Searched Album Results</h1>
     <%= apiResult[3].title %>
+    <img 
+        width="100%" 
+        src="<%= apiResult[3].cover_image %>" 
+        alt="<%= apiResult[3].title %>'s background image"
+      >
+    
   </section>
 </main>
 
 <%- include('../partials/footer') %>
+
+
