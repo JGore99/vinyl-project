@@ -2,12 +2,11 @@ import { Album } from "../models/albums.js"
 import axios from "axios"
 
 function search(req, res) {
-  axios.get(`https://api.discogs.com/database/search?q=${req.body.search}&token=${process.env.TOKEN}`)
+  axios.get(`http://api.discogs.com/database/search?type=release&q=${req.body.search}&token=${process.env.TOKEN}&format=vinyl`)
   .then(response => {
-    console.log("target!!!!",response.data.results[3].title)
     res.render('albums/results', {
       title: 'Search results',
-      apiResult: response.data.results
+      results: response.data.results
     })
   })
   .catch(err => {
@@ -17,9 +16,9 @@ function search(req, res) {
 }
 
 function show(req, res) {
-  axios.get(`https://api.discogs.com/database/search?q=${req.params.id}&token=${process.env.TOKEN}`)
+  axios.get(`https://api.discogs.com/database/search?type=release&q=${req.params.id}&token=${process.env.TOKEN}`)
   .then(response => {
-    Album.findOne({ discogsId: response.data.id })
+    Album.findOne({ discogsId: response.data.results.id })
     .then((album) => {
       res.render("albums/show", {
         title: "Album Details",
@@ -39,3 +38,8 @@ export {
   search,
   show
 }
+
+
+
+
+
