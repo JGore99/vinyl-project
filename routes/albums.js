@@ -7,6 +7,7 @@ router.get("/:id", isLoggedIn, albumsCtrl.show)
 
 router.post("/search", isLoggedIn, albumsCtrl.search)
 
+router.patch("/:id/addToCollection", isLoggedIn, albumsCtrl.addToCollection)
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

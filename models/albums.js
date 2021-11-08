@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const albumSchema = new Schema({
   discogsId: Number,
-  artist: String, 
-  release: String, 
+  artist: String,
+  title: String,  
   imageUrl: String,
   collectedBy: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
   reviews: String

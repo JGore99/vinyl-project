@@ -2,18 +2,27 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <section class="bio-details">
-    <h1>Show Album</h1>
-    <h2><%= artist %></h2>
-    <h3><%= title %></h3>
-    <img  width="50%" src="<%= image %>" alt="cover art">
-    <ul>
+  <section class="album-details">
+    <h1><%= artist %></h1>
+    <h2><%= albumTitle %></h2>
+    <img width="60%" src="<%= image %>" alt="cover art">
+    <ol>
       <% tracklist.forEach(track => { %>
         <li><%= track.title %></li> 
       <% }) %>
-    </ul>
-     
+    </ol>
+    <form action="/albums/<%= apiResult.id %>/addToCollection?_method=Patch" method="POST">
+      <input type="text" name="discogsId" hidden value="<%= apiResult.id %>">
+      <input type="text" name="artist" hidden value="<%= artist %>">
+      <input type="text" name="title" hidden value="<%= albumTitle %>">
+      <input type="text" name="imageUrl" hidden value="<%= image %>">
+    <button>Add To Collection</button>
+    </form>
   </section>
 </main>
 
 <%- include('../partials/footer') %>
+
+<!-- discogsId: Number,
+  artist: String,  
+  imageUrl: String, -->
