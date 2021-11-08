@@ -19,7 +19,7 @@ function show(req, res) {
   console.log("REQ PARAMS----------", req.params.id)
   axios.get(`https://api.discogs.com/releases/${req.params.id}?token=${process.env.TOKEN}`)
   .then(response => {
-    console.log("discogsId----------", response.data.images[0])
+    console.log("discogsId----------", response.data.tracklist)
     // Album.findOne({ discogsId: response.data.id })
     // .populate("collectedBy")
     // .then((album) => {
@@ -33,7 +33,10 @@ function show(req, res) {
     res.render("albums/show", {
           title: "Album Details",
           apiResult: response.data,
-          image: response.data.images[0].uri
+          artist: response.data.artists_sort,
+          title: response.data.title,
+          image: response.data.images[0].uri,
+          tracklist: response.data.tracklist
         })
   })
   .catch(err => {

@@ -4,7 +4,15 @@
 <main>
   <section class="bio-details">
     <h1>Show Album</h1>
+    <h2><%= artist %></h2>
+    <h3><%= title %></h3>
     <img  width="50%" src="<%= image %>" alt="cover art">
+    <ul>
+      <% tracklist.forEach(track => { %>
+        <li><%= track.title %></li> 
+      <% }) %>
+    </ul>
+     
   </section>
 </main>
 
