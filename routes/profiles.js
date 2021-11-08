@@ -9,6 +9,8 @@ router.get("/", isLoggedIn, profilesCtrl.index)
 //http://localhost:3000/profiles/:id
 router.get("/:id", isLoggedIn, profilesCtrl.show)
 
+// http://localhost:3000/profiles/:id/edit
+router.get("/:id", isLoggedIn, profilesCtrl.edit)
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next()
