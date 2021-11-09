@@ -5,7 +5,7 @@ function index(req, res) {
   Profile.find({})
   .then(profiles => {
     res.render("profiles/index", {
-      title: "Ducks im a row",
+      title: "User Profiles",
       // user: req.user ? req.user : null,
       profiles,
     })

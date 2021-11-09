@@ -4,7 +4,7 @@ import { AlbumOpinion } from '../models/albumOpinion.js'
 function create(req, res) {
   req.body.author = req.user.profile._id
   req.body.album = req.params.id
-
+  console.log("CHECK____________", req.body.album)
   AlbumOpinion.create(req.body)
   .then(opinion => {
     Album.findById(req.params.id)

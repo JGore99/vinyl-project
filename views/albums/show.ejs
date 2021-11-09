@@ -19,6 +19,18 @@
     <button>Add To Collection</button>
     </form>
   </section>
+  <% if (album?.opinions.length) { %> 
+
+    <% album?.opinions.forEach(opinion => { %>
+      <img src="<%= opinion.author.avatar %>" alt="user photo">
+      <a href="/profiles/<%= opinion.author._id %>">link</a>
+      <p> <%= opinion.content %>  </p>
+     <form action="">
+       <button type="submit">DELETE</button>
+     </form>
+    <% }) %>
+    
+  <% } %> 
   <%- include("../partials/opinion-form") %> 
 </main>
 <%- include("../partials/footer") %>

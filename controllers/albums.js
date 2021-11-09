@@ -38,6 +38,7 @@ function show(req, res) {
         image: response.data.images[0].uri,
         tracklist: response.data.tracklist,
         userHasAlbum: album?.collectedBy.some(profile => profile._id.equals(req.user.profile._id)),
+        userHasOpinion: album?.opinions.some(opinion => opinion.author.equals(req.user.profile._id))
       })
     })
   })
