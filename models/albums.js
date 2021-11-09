@@ -7,9 +7,10 @@ const albumSchema = new Schema({
   title: String,  
   imageUrl: String,
   collectedBy: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
-  reviews: String
-
-})
+  opinions: [{ type: Schema.Types.ObjectId, ref: "AlbumOpinion" }],
+},{
+  timestamps: true,
+});
 
 const Album = mongoose.model("Album", albumSchema)
 

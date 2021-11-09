@@ -16,16 +16,23 @@ function search(req, res) {
 }
 
 function show(req, res) {
-  console.log("REQ PARAMS----------", req.params.id)
+  // console.log("REQ PARAMS----------", req.params.id)
   axios.get(`https://api.discogs.com/releases/${req.params.id}?token=${process.env.TOKEN}`)
   .then(response => {
-    console.log("discogsId----------", response.data.tracklist)
+    // console.log("discogsId----------", response.data.tracklist)
     Album.findOne({ discogsId: response.data.id })
     .populate("collectedBy")
+    .populate({
+      path: 'opinions', 
+      populate: {
+        path: 'author'
+      }
+    })
     .then((album) => {
       res.render("albums/show", {
         title: "Album Details",
         apiResult: response.data,
+        album,
         artist: response.data.artists_sort,
         albumTitle: response.data.title,
         image: response.data.images[0].uri,
