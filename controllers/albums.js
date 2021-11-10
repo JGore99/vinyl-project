@@ -74,12 +74,12 @@ function addToCollection(req, res) {
 
 function deleteOpinion(req, res) {
   console.log("REQBODY--------", req.body)
-  console.log("REQPARAMS--------", req.params._id)
-  Album.findById(req.params._id)
-  .then(() => {
-    AlbumOpinion.findByIdAndDelete(req.params.id)
+  console.log("REQPARAMS--------", req.params.albumId)
+  Album.findById(req.params.albumId)
+  .then((album) => {
+    AlbumOpinion.findByIdAndDelete(req.params.opinionId)
     .then(() => {
-      res.redirect(`/albums/${req.params.id}`)
+      res.redirect(`/albums/${album.discogsId}`)
     })
   })
 }
