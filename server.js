@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import session from 'express-session'
 import logger from 'morgan'
+import ("./config/database.js")
 import methodOverride from 'method-override'
 import passport from 'passport'
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20'

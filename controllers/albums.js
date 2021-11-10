@@ -39,7 +39,7 @@ function show(req, res) {
         image: response.data.images[0].uri,
         tracklist: response.data.tracklist,
         userHasAlbum: album?.collectedBy.some(profile => profile._id.equals(req.user.profile._id)),
-        userHasOpinion: album?.opinions.some(opinion => opinion.author.equals(req.user.profile._id))
+        userHasOpinion: album?.opinions.some(opinion => opinion.author.equals(req.user.profile._id)), 
       })
     })
   })
@@ -73,11 +73,18 @@ function addToCollection(req, res) {
 }
 
 function deleteOpinion(req, res) {
+  console.log("REQBODY--------", req.body)
+  console.log("REQPARAMS--------", req.params._id)
   Album.findById(req.params._id)
   .then(() => {
-    res.redirect(`/albums/${req.params.albumId}`)
+    AlbumOpinion.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect(`/albums/${req.params.id}`)
+    })
   })
 }
+
+
 
 export {
   search,

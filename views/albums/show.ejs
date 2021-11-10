@@ -22,11 +22,11 @@
   <% if (album?.opinions.length) { %> 
 
     <% album?.opinions.forEach(opinion => { %>
+      <form action="/albums/<%= album._id %>/opinions/<%= opinion._id %>?_method=DELETE" method="POST">
       <img src="<%= opinion.author.avatar %>" alt="user photo">
       <a href="/profiles/<%= opinion.author._id %>">link</a>
       <p> <%= opinion.content %>  </p>
-      <form action="/albums/<%= album._id %>/opinions/<%= opinion._id %>?_method=DELETE" method="POST">
-        <button type="submit">DELETE</button>
+        <button>DELETE</button>
       </form>
     <% }) %>
     
