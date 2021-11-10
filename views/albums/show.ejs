@@ -20,17 +20,12 @@
     </form>
   </section>
   <% if (album?.opinions.length) { %> 
-
-    <% album?.opinions.forEach(opinion => { %>
-      <form action="/albums/<%= album.id %>/opinions/<%= opinion._id %>?_method=DELETE" method="POST">
-      <img src="<%= opinion.author.avatar %>" alt="user photo">
-      <a href="/profiles/<%= opinion.author._id %>">link</a>
-      <p> <%= opinion.content %>  </p>
-        <button>DELETE</button>
-      </form>
-      <% }) %>
-      <% } %> 
+    <%- include("../partials/opinions") %> 
+    
+  <% } %> 
+    <% if (!userHasOpinion && userHasAlbum) { %> 
       <%- include("../partials/opinion-form") %> 
+    <% } %> 
 </main>
 <%- include("../partials/footer") %>
 
