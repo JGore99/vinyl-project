@@ -1,4 +1,5 @@
 import { Album } from "../models/albums.js"
+import { AlbumOpinion } from '../models/albumOpinion.js'
 import axios from "axios"
 
 function search(req, res) {
@@ -71,10 +72,18 @@ function addToCollection(req, res) {
   })
 }
 
+function deleteOpinion(req, res) {
+  Album.findById(req.params._id)
+  .then(() => {
+    res.redirect(`/albums/${req.params.albumId}`)
+  })
+}
+
 export {
   search,
   show,
-  addToCollection
+  addToCollection,
+  deleteOpinion
 }
 
 
