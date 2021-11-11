@@ -3,21 +3,27 @@
 
 <main class="main-details">
   <section class="album-facts">
-    <h1><%= artist %></h1>
-    <h2><%= albumTitle %></h2>
-    <img class="cover-art" src="<%= image %>" alt="cover art">
-    <ol class="track-list">
-      <% tracklist.forEach(track => { %>
-        <li><%= track.title %></li> 
-      <% }) %>
-    </ol>
-    <form action="/albums/<%= apiResult.id %>/addToCollection?_method=Patch" method="POST">
-      <input type="text" name="discogsId" hidden value="<%= apiResult.id %>">
-      <input type="text" name="artist" hidden value="<%= artist %>">
-      <input type="text" name="title" hidden value="<%= albumTitle %>">
-      <input type="text" name="imageUrl" hidden value="<%= image %>">
-    <button>Add To Collection</button>
-    </form>
+    <div class="artist-title-cover">
+      <div class="show-info">
+        <h1><%= artist %></h1>
+        <h2><%= albumTitle %></h2>
+      </div>
+      <img class="cover-art" src="<%= image %>" alt="cover art">
+    </div>
+    <div class="track-list-add-collection">
+      <ol class="track-list">
+        <% tracklist.forEach(track => { %>
+          <li><%= track.title %></li> 
+        <% }) %>
+      </ol>
+      <form class="collect-form" action="/albums/<%= apiResult.id %>/addToCollection?_method=Patch" method="POST">    
+        <input type="text" name="discogsId" hidden value="<%= apiResult.id %>">
+        <input type="text" name="artist" hidden value="<%= artist %>">
+        <input type="text" name="title" hidden value="<%= albumTitle %>">
+        <input type="text" name="imageUrl" hidden value="<%= image %>">
+        <button class="add-collection">Add To Collection</button>
+      </form>
+    </div>
   </section>
   <% if (album?.opinions.length) { %> 
     <%- include("../partials/opinions") %> 

@@ -1,8 +1,11 @@
 <% album?.opinions.forEach(opinion => { %>
-  <form action="/albums/<%= album.id %>/opinions/<%= opinion._id %>?_method=DELETE" method="POST">
-  <img src="<%= opinion.author.avatar %>" alt="user photo">
-  <a href="/profiles/<%= opinion.author._id %>">link</a>
-  <p> <%= opinion.content %>  </p>
-    <button>DELETE</button>
+  <form class="opinion-form" action="/albums/<%= album.id %>/opinions/<%= opinion._id %>?_method=DELETE" method="POST">
+  <div class="photo-delete-button">
+    <a href="/profiles/<%= opinion.author._id %>">
+      <img class="opinion-photo" src="<%= opinion.author.avatar %>" alt="user photo">
+    </a>
+    <button class="delete-opinion">DELETE</button>
+  </div>
+  <p class="opinion-content"> <%= opinion.content %>  </p>
   </form>
   <% }) %>

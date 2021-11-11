@@ -4,8 +4,8 @@
 <main>
   <section class="bio-details">
     <h1 class="page-title">User's Collection</h1>
-    <h3 class="profile-details"><%= profile.name %></h3>
-    <h3 class="profile-details">Gmail: <%= user.email %></h3>
+    <!-- <h3 class="profile-details"><%= profile.name %></h3>
+    <h3 class="profile-details">Gmail: <%= user.email %></h3> -->
     
       <% if(!profile._id.equals(userProfile._id) && !userProfile.friends?.includes(profile._id)) { %> 
         <form action="/profiles/<%= profile._id %>/friend?_method=PATCH" method="POST">
