@@ -1,19 +1,16 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
-  <section class="bio-details">
+<main class="main-results">
+  <section class="bio-details"> 
     <h1>Searched Album Results</h1>
     <% if (results) {%> 
       <section>
-        <% results.forEach(album => { %> 
-          
-          <img 
-        width="50%" 
-        src="<%= album.cover_image %>" 
-        alt="background image"
-      >
-      <a href="/albums/<%= album.id %>">About</a> 
+        <% results.forEach(album => { %>        
+          <a href="/albums/<%= album.id %>"><img class="album-results" 
+            src="<%= album.cover_image %>" 
+            alt="background image"
+          ></a> 
         <% })  %> 
       </section>
     <% } %> 

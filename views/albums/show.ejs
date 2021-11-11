@@ -1,12 +1,12 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
-  <section class="album-details">
+<main class="main-details">
+  <section class="album-facts">
     <h1><%= artist %></h1>
     <h2><%= albumTitle %></h2>
-    <img width="60%" src="<%= image %>" alt="cover art">
-    <ol>
+    <img class="cover-art" src="<%= image %>" alt="cover art">
+    <ol class="track-list">
       <% tracklist.forEach(track => { %>
         <li><%= track.title %></li> 
       <% }) %>
@@ -28,7 +28,3 @@
     <% } %> 
 </main>
 <%- include("../partials/footer") %>
-
-<!-- discogsId: Number,
-  artist: String,  
-  imageUrl: String, -->

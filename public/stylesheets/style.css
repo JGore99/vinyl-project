@@ -5,7 +5,7 @@ html, body, main {
 
 
 body {
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(172, 172, 172);
   font-family: Arial, Helvetica, sans-serif;
 }
 /* The Universal Selector */
@@ -31,7 +31,7 @@ nav {
   display: flex;
   justify-content: space-between;
   height: 5rem;
-  border-bottom: 2px rgba(121, 0, 0, 0.9) solid;
+  border-bottom: 2px rgba(139, 0, 0, 0.9) solid;
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
   margin: 0;
   top: 0;
@@ -66,7 +66,7 @@ nav {
 .bio-details {
   position: relative;
   top: 50px;
-  height: 6rem;
+  height: 6.5rem;
   text-align: center;
 }
 
@@ -91,6 +91,8 @@ nav {
   font-size: 1rem;
 }
 
+/* USER COLLECTION */
+
 .album-container {
   top: 20px;
   display: grid;
@@ -105,12 +107,12 @@ nav {
 
 .album-card {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(197, 197, 197);
   border-radius: 3px 3px 0 0;
   display: flex;
   flex-flow: column;
   width: 260px;
-  margin: 0px;
+  margin: 5px 0px;
 }
 
 .album-art {
@@ -178,4 +180,67 @@ button {
 button:hover {
   color: black;
   background-color: rgb(219, 219, 219);
+}
+
+/* HOME */
+
+.main-home {
+  top: 100rem;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.home-image {
+  margin-top: 10rem;
+  width: 50rem;
+}
+
+/* RESULTS */
+
+.main-results {
+  top: 100rem;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.search-details {
+  top: 100rem;
+  margin: auto;
+}
+
+.album-results {
+  width: 40rem;
+  margin: 4rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.album-results:hover{
+  transform: scale(1.03);
+}
+
+/* ALBUM DETAILS */
+
+.main-details {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.album-facts {
+  margin: 7rem auto 0;
+}
+
+.cover-art {
+  width: 45rem;
+  margin: 0 0 4rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.track-list {
+  font-size: 1.3rem;
+  text-align: left;
+  margin: 0 auto 3rem;
+  width: 45rem;
 }
