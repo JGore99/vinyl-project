@@ -5,30 +5,33 @@
 <body>
   <nav>
     <% if (user) { %>
-      <img
-        class="image-rounded" 
-        src="<%= user.profile.avatar %>" 
-        alt="<%= user.profile.name %>'s avatar"
-      >
-      <h3><%= user.profile.name %></h3>
-      <h3><%= user.profile.email %></h3>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-      <a href="/profiles/<%= user.profile?._id %>">
-        My Profile
-      </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
-    <a href="/profiles">
-      View Users
-    </a>
-    <form action="/albums/search" method="POST">
-      <input name="search" type="search" placeholder="Search Albums">
-    </form>
+      <div class="image-name">
+        <img
+          class="nav-image" 
+          src="<%= user.profile.avatar %>" 
+          alt="<%= user.profile.name %>'s avatar"
+        >
+        <h3 class="nav-text"><%= user.profile.name %></h3>
+      </div>
+      <div class="nav-tools">
+        <a href="/auth/logout">
+          <button type="submit">Logout</button>
+        </a>
+        <a class="nav-link" href="/profiles/<%= user.profile?._id %>">
+          My Profile
+        </a>
+        <% } else { %>
+          <a href="/auth/google" class="siwg-link">
+            <button type="submit" class="siwg">
+              <img id="siwg-image" alt="Sign in with Google" />
+            </button>
+          </a>
+          <% } %>
+          <a class="nav-link" href="/profiles">
+            View Users
+          </a>
+          <form action="/albums/search" method="POST">
+            <input class="search" name="search" type="search" placeholder="Search Albums">
+          </form>
+        </div>
   </nav>

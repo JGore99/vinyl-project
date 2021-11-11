@@ -3,6 +3,11 @@ html, body, main {
   width: 100%;
 }
 
+
+body {
+  background-color: rgb(209, 209, 209);
+  font-family: Arial, Helvetica, sans-serif;
+}
 /* The Universal Selector */
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
@@ -19,32 +24,101 @@ html, body, main {
   font-size: 62.5%;
 }
 
+nav {
+  background: rgb(62,62,62);
+  background: linear-gradient(0deg, rgba(62,62,62,1) 24%, rgba(59,59,59,1) 100%);
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  border-bottom: 2px rgba(121, 0, 0, 0.9) solid;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  color: rgb(228, 228, 228);
+}
+
+.image-name {
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  width: 40rem;
+}
+
+.nav-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 44rem;
+}
+
+.nav-image {
+  height: 5rem;
+  border-radius: 5%;
+  margin: 0% 1rem;
+}
+
+.bio-details {
+  position: relative;
+  top: 50px;
+  height: 6rem;
+  text-align: center;
+}
+
+.nav-text {
+  font-size: 2rem;
+  text-shadow: 1px 1px 1px black;
+  line-height: 2rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: rgb(228, 228, 228);
+}
+
+.page-title {
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-details {
+  font-size: 1rem;
+}
+
 .album-container {
+  top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 0.5rem;
+  grid-gap: .1rem;
   margin: 0 auto;
   height: 100%;
   justify-items: center;
+  align-items: center;
   max-width: 1200px;
 } 
 
-
 .album-card {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(219, 219, 219);
+  border-radius: 3px 3px 0 0;
   display: flex;
   flex-flow: column;
-  height: 290px;
-  width: 280px;
+  width: 260px;
+  margin: 0px;
 }
 
 .album-art {
-  height: 280px;
-  width: 280px;
+  height: 260px;
+  width: 260px;
   object-fit: cover;
-  margin: 0px auto;
-
+  margin: 0px auto -3px;
+  justify-content: flex-end;
 } 
 
 .album-art:hover {
@@ -59,13 +133,49 @@ html, body, main {
 
 .artist, .title {
   align-self: center;
-  padding: 1px 3px 0;
+  padding: 0px 4px;
 }
 
 .artist {
   font-size: 15px;
 }
 
+.search {
+  background-color: black;
+  height: 3rem;
+  color: rgb(219, 219, 219);
+  text-align: center;
+  border-radius: 1rem;
+}
+
 .title {
-  font-size: 10px;
+  font-size: 12px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  color: rgb(219, 219, 219);
+  background-color: black;
+  border: none;
+  padding: 7px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  color: black;
+  background-color: rgb(219, 219, 219);
 }
