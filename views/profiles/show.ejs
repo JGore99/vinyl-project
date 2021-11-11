@@ -28,13 +28,17 @@
       <% } %> 
   </section>
   <section class="album-container">
-    <% albums.forEach(album =>{ %>
+  <% albums.forEach(album =>{ %>
       <div class="album-card">
-        <h2 class="artist"><%= album.artist %></h2>
-        <h3 class="title"><%= album.title %></h3>
-        <a href="/albums/<%= album.discogsId %> "><img class="album-art" src="<%= album.imageUrl %>" alt="cover art"></a>
-        <% }) %> 
-      </div>
+        <div class="album-text">
+          <h2 class="artist"><%= album.artist %></h2>
+          <h3 class="title"><%= album.title %></h3>
+        </div>
+        <a href="/albums/<%= album.discogsId %>">
+          <img class="album-art" src="<%= album.imageUrl %>" alt="cover art">
+        </a>
+        </div>
+      <% }) %> 
   </section>
 
 </main>

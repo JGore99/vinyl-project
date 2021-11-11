@@ -1,0 +1,107 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after {
+  /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+     in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+nav {
+  background: rgb(62,62,62);
+  background: linear-gradient(0deg, rgba(62,62,62,1) 24%, rgba(59,59,59,1) 100%);
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: flex-end;
+  height: 5rem;
+  border-bottom: 2px rgba(121, 0, 0, 0.9) solid;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 0 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+.album-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  height: 100%;
+  width: 400px;
+  padding: 0 10rem;
+} 
+
+.card-holder {
+  display: block;
+  border: rgb(255, 0, 0) 1px solid;
+  /* flex-basis: 100%; */
+  width: 280px;
+  box-sizing: border-box;
+  margin: 50px;
+}
+
+.album-card {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  /* border: 1px solid rgb(14, 126, 102); */
+  background-color: rgb(240, 240, 240);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20px 280px;
+  width: 280px;
+  text-align: center;
+}
+
+.album-art {
+  height: 280px;
+  width: 280px;
+  grid-column: 1 / 3;
+  grid-row: 1 / 4;
+  margin: 0px auto;
+
+} 
+
+.album-art:hover {
+  transform: scale(1.02);
+}
+
+.artist, .title {
+  align-self: center;
+  padding-top: 1px;
+}
+
+.artist {
+  font-size: 15px;
+  grid-column: 0 / 1;
+  grid-row: 0 / 1;
+}
+
+.title {
+  font-size: 10px;
+  grid-column: 2 / 3;
+  grid-row: 0 / 1;
+}
