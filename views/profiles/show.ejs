@@ -4,11 +4,11 @@
 <main>
   <section class="bio-details">
     <h1>User Details</h1>
-    <img
+    <!-- <img
         class="image-rounded" 
         src="<%= profile.avatar %>" 
         alt="<%= profile.name %>'s avatar"
-      >
+      > -->
 
       <tr>
         <td><%= profile.name %></td>
@@ -27,19 +27,16 @@
         </form>
       <% } %> 
   </section>
-  <section>
+  <section class="album-container">
     <% albums.forEach(album =>{ %>
-      <h2><%= album.artist %></h2>
-    <h3><%= album.title %></h3>
-    <img width="40%" src="<%= album.imageUrl %>" alt="cover art">
-    <a href="/albums/<%= album.discogsId %> ">Album Info</a>
-    <% }) %> 
+      <div class="album-card">
+        <h2 class="artist"><%= album.artist %></h2>
+        <h3 class="title"><%= album.title %></h3>
+        <a href="/albums/<%= album.discogsId %> "><img class="album-art" src="<%= album.imageUrl %>" alt="cover art"></a>
+        <% }) %> 
+      </div>
   </section>
 
 </main>
 
 <%- include('../partials/footer') %>
-
-<!-- profile info
-     Collection
-     Friends -->

@@ -5,6 +5,13 @@
 <body>
   <nav>
     <% if (user) { %>
+      <img
+        class="image-rounded" 
+        src="<%= user.profile.avatar %>" 
+        alt="<%= user.profile.name %>'s avatar"
+      >
+      <h3><%= user.profile.name %></h3>
+      <h3><%= user.profile.email %></h3>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
