@@ -2,13 +2,13 @@
 
 ## Description:
 
-Connect Four is a two player, turned based game, played on a gird that stands up vertically. Each player takes a turn claiming spaces on the grid. The first player to get four chips in a line wins. This can be done vertically, horizontally, or diagonally. 
+An app focused on collecting and sharing opinions on records. Utilizing the Discogs API, the app has an extensive data source to work from.
 
 <p>&nbsp;</p>
 
 ## Objective:
 
-A social media app focused on collecting and sharing opinions on records. Utilizing the Discogs API, the app has an extensive data source to work from.
+To build a full CRUD, full stack application that is also interesting and enjoyable.
 
 <p>&nbsp;</p>
 
