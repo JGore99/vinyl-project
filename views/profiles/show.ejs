@@ -18,6 +18,23 @@
         </form>
       <% } %> 
   </section>
+  <section class="friends-list">
+    <% profile.friends.forEach(friend => {  %> 
+      <a href="/profiles/<%= friend._id %>">
+        <div class="friend-info">
+          <% if (friend.avatar) { %>
+            <img class="friends-photo"
+              src="<%= friend.avatar %>"
+              alt="<%= friend.name %>'s avatar"
+            />
+          <% } else { %>
+            <h2>No Dice!</h2>
+          <% } %>
+          <p><%= friend.name %></p>
+        </div>
+      </a>
+    <% }) %> 
+  </section>
   <section class="album-container">
   <% albums.forEach(album =>{ %>
       <div class="album-card">
