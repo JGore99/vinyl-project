@@ -99,7 +99,7 @@ nav {
 }
 
 .friend-info {
-  margin: auto;
+  margin: 0 1rem;
   text-align: center;
 }
 
@@ -117,7 +117,7 @@ nav {
   margin: 2rem auto;
   height: 100%;
   justify-items: center;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1200px;
 } 
 
@@ -322,4 +322,16 @@ button:hover {
   font-size: 1.6rem;
   align-self: center;
   padding: 0 0 0 1rem;
+}
+
+/* ALL USERS */
+
+.all-users {
+  margin-top: 5rem;
+  display: flex;
+}
+
+.user-tile {
+  margin: 2rem;
+  text-align: center;
 }
