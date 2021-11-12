@@ -14,24 +14,24 @@
         <h3 class="nav-text"><%= user.profile.name %></h3>
       </div>
       <div class="nav-tools">
-        <a href="/auth/logout">
-          <button type="submit">Logout</button>
-        </a>
-        <a class="nav-link" href="/profiles/<%= user.profile?._id %>">
-          My Profile
-        </a>
-        <% } else { %>
-          <a href="/auth/google" class="siwg-link">
-            <button type="submit" class="siwg">
-              <img id="siwg-image" alt="Sign in with Google" />
-            </button>
+          <a href="/auth/logout">
+            <button type="submit">Logout</button>
           </a>
-          <% } %>
+          <a class="nav-link" href="/profiles/<%= user.profile?._id %>">
+            My Profile
+          </a>
           <a class="nav-link" href="/profiles">
             View Users
           </a>
           <form action="/albums/search" method="POST">
             <input class="search" name="search" type="search" placeholder="Search Albums">
           </form>
+          <% } else { %>
+            <a href="/auth/google" class="siwg-link">
+              <button type="submit" class="siwg">
+                <img id="siwg-image" alt="Sign in with Google" />
+              </button>
+            </a>
+            <% } %>
         </div>
   </nav>

@@ -191,8 +191,12 @@ button:hover {
   text-align: center;
 }
 
-.home-image {
+.greeting {
   margin-top: 10rem;
+}
+
+.home-image {
+  margin-top: 2rem;
   width: 50rem;
 }
 
