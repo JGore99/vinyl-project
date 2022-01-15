@@ -3,14 +3,9 @@
 <%- include('./partials/nav') %>
 
 <main class="main-home">
-  <section id="title-content">
-    <h1 class="greeting">Hello <%= user ? user.profile.name : "Please log in" %></h1>
-    <img class="home-image" src="https://imageproxy.ifunny.co/crop:x-20,resize:640x,quality:90x75/images/756f633df95439fe34e5e16b0b61f7d46e39e4ca725d1b1f29311c25fe5d0ae3_1.jpg" alt="record meme">
-    <h2>Welcome to Record Duck</h2>
-      (Not really)
-    </a>
-    
-
+  <section id="home-content">
+    <h1 class="greeting">Hello <%= user ? user.profile.name: "Please log in" %></h1>
+    <img class="home-image" src="/images/info_graphic.jpeg" alt="record meme">
   </section>
 </main>
 <%- include('./partials/footer') %>

@@ -1,12 +1,26 @@
-html, body, main {
-  height: 100%;
+html  {
+  box-sizing: border-box;
+}
+
+body, main {
+  /* height: 100vh; */
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 
 body {
-  background-color: rgb(172, 172, 172);
   font-family: Arial, Helvetica, sans-serif;
+  --bg-color: rgb(172, 172, 172);
+  --nav-background: rgb(62,62,62);
+  --nav-color: rgb(228, 228, 228);
+  --nav-gradient: linear-gradient(0deg, rgb(73, 73, 73) 24%, rgb(51, 51, 51) 100%);
+  --text-s: 1.3rem;
+  --text-m: 1.4rem;
+  --text-l: 1.6rem;
+  --text-xl: ;
+  background-color: var(--bg-color);
 }
 /* The Universal Selector */
 *, /* All elements*/
@@ -16,9 +30,6 @@ body {
   /* height & width will now include border & padding by default
      but can be over-ridden as needed */
   box-sizing: inherit;
-  --nav-background: rgb(62,62,62);
-  --nav-color: rgb(228, 228, 228);
-  --nav-gradient: linear-gradient(0deg, rgb(73, 73, 73) 24%, rgb(51, 51, 51) 100%);
 }
 
 /* resets font size to be 62.5% of the user preference - 
@@ -30,10 +41,12 @@ body {
 nav {
   background: var(--nav-background);
   background: var(--nav-gradient);
-  font-size: 1.6rem;
+  font-size: var(--text-l);
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  height: 5rem;
+  /* height: 5rem; */
   border-bottom: 2px rgba(139, 0, 0, 0.9) solid;
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
   margin: 0;
@@ -42,28 +55,31 @@ nav {
   width: 100%;
   position: fixed;
   z-index: 1;
-  color: rgb(228, 228, 228);
+  color: var(--nav-color);
+  padding: 1rem;
 }
 
-.image-name {
+.nav-user-container {
   display: flex;
   align-items: center;
-  justify-self: flex-start;
-  width: 40rem;
+  justify-content: space-around;
+  justify-self: start;
+  /* margin: 0 1rem; */
+  width: auto;
 }
 
 .nav-tools {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-self: flex-end;
+  justify-content: space-between;
   height: 100%;
-  width: 44rem;
 }
 
 .nav-image {
   height: 5rem;
   border-radius: 5%;
-  margin: 0% 1rem;
+
 }
 
 .bio-details {
@@ -74,14 +90,50 @@ nav {
 }
 
 .nav-text {
-  font-size: 2rem;
+  font-size: var(--text-l);
+  font-weight: 400;
   text-shadow: 1px 1px 1px black;
   line-height: 2rem;
   letter-spacing: 1px;
+  padding: 0 1rem;
+  white-space: nowrap;
 }
 
 .nav-link {
+  font-size: var(--text-l);
   color: rgb(228, 228, 228);
+}
+
+#search-container {
+  justify-self: stretch;
+}
+
+/* HOME */
+
+.main-home {
+  top: 100rem;
+  margin: auto;
+  height: 90%;
+  width: 50%;
+  text-align: center;
+}
+
+#home-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+
+.greeting {
+  margin-top: 10rem;
+}
+
+.home-image {
+  margin: 2rem auto 0 auto;
+  width: 100%;
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 5px;
 }
 
 .page-title {
@@ -187,8 +239,9 @@ a:hover {
 
 .function-btn {
   color: rgb(219, 219, 219);
-  background: var(--nav-background);
-  background: var(--nav-gradient);
+  /* background: var(--nav-background);
+  background: var(--nav-gradient); */
+  background: none;
   border: none;
   padding: 7px 15px;
   text-align: center;
@@ -199,26 +252,8 @@ a:hover {
 
 .function-btn:hover {
   color: black;
-  background: rgb(219, 219, 219);
+  background: rgb(184, 184, 184);
   border: 1px black solid;
-}
-
-/* HOME */
-
-.main-home {
-  top: 100rem;
-  margin: auto;
-  width: 50%;
-  text-align: center;
-}
-
-.greeting {
-  margin-top: 10rem;
-}
-
-.home-image {
-  margin: 2rem auto 0 auto;
-  width: 50rem;
 }
 
 /* RESULTS */
@@ -339,4 +374,56 @@ a:hover {
 .user-tile {
   margin: 2rem;
   text-align: center;
+}
+/* -------------------MEDIA---------------------- */
+
+@media only screen and (max-width: 650px) {
+  nav {
+    display: grid;
+    /* grid-template-columns: auto min-content; */
+    grid-auto-rows: min-content;
+    grid-auto-columns: min-content;
+    height: auto;
+    justify-content: center;
+    padding: .5rem;
+    padding-bottom: 0;
+  }
+
+  .nav-user-container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: 0;
+  }
+
+  .nav-tools {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    align-items: center;
+    justify-self: center;
+    padding-top: .2rem;
+    width: 100%;
+  }
+
+  #search-container {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .function-btn {
+    color: black;
+    background: rgb(184, 184, 184);
+    border: 1px black solid;
+    font-size: var(--text-s);
+  }
+
+  /* HOME */
+
+.main-home {
+  /* top: 100rem;
+  margin: auto;
+  height: 90%; */
+  width: 70%;
+  text-align: center;
+}
+
 }

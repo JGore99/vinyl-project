@@ -5,7 +5,7 @@
 <body>
   <nav>
     <% if (user) { %>
-      <div class="image-name">
+      <div class="nav-user-container">
         <img
           class="nav-image" 
           src="<%= user.profile.avatar %>" 
@@ -17,15 +17,12 @@
           <a href="/auth/logout">
             <button class="function-btn" type="submit">Logout</button>
           </a>
-          <a class="nav-link" href="/profiles/<%= user.profile?._id %>">
+          <a class="nav-link nav-text" href="/profiles/<%= user.profile?._id %>">
             My Profile
           </a>
-          <a class="nav-link" href="/profiles">
+          <a class="nav-link nav-text" href="/profiles">
             View Users
           </a>
-          <form action="/albums/search" method="POST">
-            <input class="search" name="search" type="search" placeholder="Search Albums">
-          </form>
           <% } else { %>
             <a href="/auth/google" class="siwg-link">
               <button type="submit" class="siwg">
@@ -33,5 +30,10 @@
               </button>
             </a>
             <% } %>
+        </div>
+        <div id="search-container">
+          <form action="/albums/search" method="POST">
+            <input class="search" name="search" type="search" placeholder="Search Albums">
+          </form>
         </div>
   </nav>
