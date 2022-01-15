@@ -16,6 +16,9 @@ body {
   /* height & width will now include border & padding by default
      but can be over-ridden as needed */
   box-sizing: inherit;
+  --nav-background: rgb(62,62,62);
+  --nav-color: rgb(228, 228, 228);
+  --nav-gradient: linear-gradient(0deg, rgb(73, 73, 73) 24%, rgb(51, 51, 51) 100%);
 }
 
 /* resets font size to be 62.5% of the user preference - 
@@ -25,8 +28,8 @@ body {
 }
 
 nav {
-  background: rgb(62,62,62);
-  background: linear-gradient(0deg, rgba(62,62,62,1) 24%, rgba(59,59,59,1) 100%);
+  background: var(--nav-background);
+  background: var(--nav-gradient);
   font-size: 1.6rem;
   display: flex;
   justify-content: space-between;
@@ -182,9 +185,10 @@ a:hover {
   text-decoration: underline;
 }
 
-button {
+.function-btn {
   color: rgb(219, 219, 219);
-  background-color: black;
+  background: var(--nav-background);
+  background: var(--nav-gradient);
   border: none;
   padding: 7px 15px;
   text-align: center;
@@ -193,9 +197,10 @@ button {
   font-size: 16px;
 }
 
-button:hover {
+.function-btn:hover {
   color: black;
-  background-color: rgb(219, 219, 219);
+  background: rgb(219, 219, 219);
+  border: 1px black solid;
 }
 
 /* HOME */

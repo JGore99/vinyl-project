@@ -1,5 +1,6 @@
 .siwg {
   background: url(/images/auth/google/siwg_light_normal.png);
+  background-repeat: no-repeat;
   cursor: pointer;
   border: none;
   width: 191px;
@@ -7,17 +8,20 @@
 }
 
 .siwg-link {
+  padding: .5rem;
   display: inline-block;
 }
 
 .siwg:focus,
 .siwg-link:focus {
   background: url(/images/auth/google/siwg_light_focus.png);
+  background-repeat: no-repeat;
   outline: none;
 }
 
 .siwg:active {
   background: url(/images/auth/google/siwg_light_pressed.png);
+  background-repeat: no-repeat;
 }
 
 /* This pre-loads the siwg focus and active buttons */
