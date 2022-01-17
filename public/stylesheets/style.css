@@ -16,9 +16,10 @@ body {
   --nav-background: rgb(62,62,62);
   --nav-color: rgb(228, 228, 228);
   --nav-gradient: linear-gradient(0deg, rgb(73, 73, 73) 24%, rgb(51, 51, 51) 100%);
+  --text-xs: .9rem;
   --text-s: 1.2rem;
-  --text-m: 1.4rem;
-  --text-l: 1.6rem;
+  --text-m: 1.5rem;
+  --text-l: 1.8rem;
   --text-xl: 2rem;
   background-color: var(--bg-color);
 }
@@ -56,7 +57,7 @@ nav {
   position: fixed;
   z-index: 1;
   color: var(--nav-color);
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 h1 {
@@ -122,9 +123,9 @@ h1 {
 }
 
 
-/* .page-title {
-  margin-top: 10rem;
-} */
+.page-title {
+  margin: none;
+}
 
 .home-image {
   margin: 2rem auto 0 auto;
@@ -183,29 +184,6 @@ a:hover {
   border: 1px black solid;
 }
 
-/* RESULTS */
-
-.main-results {
-  top: 100rem;
-  margin: auto;
-  width: 80%;
-  text-align: center;
-}
-
-.search-details {
-  top: 100rem;
-  margin: auto;
-}
-
-.album-results {
-  width: 40rem;
-  margin: 4rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
-}
-
-.album-results:hover{
-  transform: scale(1.03);
-}
 
 /* ALBUM DETAILS */
 
@@ -304,14 +282,19 @@ a:hover {
 }
 /* -------------------MEDIA---------------------- */
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
+
+  h1 {
+    font-size: var(--text-l);
+  }
+
   nav {
     display: grid;
     /* grid-template-columns: auto min-content; */
     grid-auto-rows: min-content;
     grid-auto-columns: min-content;
     height: auto;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: .5rem;
     padding-bottom: 0;
   }
@@ -332,10 +315,15 @@ a:hover {
     width: 100%;
   }
 
-.nav-text {
-  padding-left: 0;
-  padding-right: 0;
-}
+  .nav-text {
+    padding-left: 1rem;
+    padding-right: 0;
+    font-size: var(--text-m);
+  }
+
+  .nav-image {
+    height: 5rem;
+  }
 
   #search-container {
     grid-column: 2 / 3;
@@ -345,6 +333,7 @@ a:hover {
 
   .function-btn {
     white-space: nowrap;
+    font-size: var(--text-m);
   }
 
   function-btn:hover {

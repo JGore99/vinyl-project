@@ -8,7 +8,7 @@
 <main>
   <div class="profile-container">
     <section class="bio-details">
-      <h1 class="page-title">User's Collection</h1>
+      <h1 id="user-details" class="page-title"><%= user.profile.name %>'s Profile</h1>
       <!-- <h3 class="profile-details"><%= profile.name %></h3>
       <h3 class="profile-details">Gmail: <%= user.email %></h3> -->
       
@@ -36,7 +36,7 @@
               <h2>No Dice!</h2>
             <% } %>
           </a>
-          <p><%= friend.name %></p>
+          <p class="friend-name"><%= friend.name %></p>
         </div>
       <% }) %> 
     </section>
