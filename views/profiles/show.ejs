@@ -1,54 +1,59 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<% { %>
+  <link rel="stylesheet" href="/stylesheets/profile-show.css">
+<% } %>
+
 <main>
-  <section class="bio-details">
-    <h1 class="page-title">User's Collection</h1>
-    <!-- <h3 class="profile-details"><%= profile.name %></h3>
-    <h3 class="profile-details">Gmail: <%= user.email %></h3> -->
-    
-      <% if(!profile._id.equals(userProfile._id) && !userProfile.friends?.includes(profile._id)) { %> 
-        <form action="/profiles/<%= profile._id %>/friend?_method=PATCH" method="POST">
-          <button type="submit">Add Friend</button>
-        </form>
-      <% } %> 
-      <% if (!profile._id.equals(userProfile._id) && userProfile.friends?.includes(profile._id)) { %> 
-        <form action="/profiles/<%= profile._id %>/unfriend?_method=PATCH" method="POST">
-          <button type="submit">Remove Friend</button>
-        </form>
-      <% } %> 
-  </section>
-  <section class="friends-list">
-    <% profile.friends.forEach(friend => {  %> 
-      <div class="friend-info">
-        <a href="/profiles/<%= friend._id %>">
-          <% if (friend.avatar) { %>
-            <img class="friends-photo"
-              src="<%= friend.avatar %>"
-              alt="<%= friend.name %>"
-            />
-          <% } else { %>
-            <h2>No Dice!</h2>
-          <% } %>
-        </a>
-        <p><%= friend.name %></p>
-      </div>
-    <% }) %> 
-  </section>
-  <section class="album-container">
-  <% albums.forEach(album =>{ %>
-      <div class="album-card">
-        <div class="album-text">
-          <h2 class="artist"><%= album.artist %></h2>
-          <h3 class="title"><%= album.title %></h3>
-        </div>
-        <a href="/albums/<%= album.discogsId %>">
-          <img class="album-art" src="<%= album.imageUrl %>" alt="cover art">
-        </a>
+  <div class="profile-container">
+    <section class="bio-details">
+      <h1 class="page-title">User's Collection</h1>
+      <!-- <h3 class="profile-details"><%= profile.name %></h3>
+      <h3 class="profile-details">Gmail: <%= user.email %></h3> -->
+      
+        <% if(!profile._id.equals(userProfile._id) && !userProfile.friends?.includes(profile._id)) { %> 
+          <form action="/profiles/<%= profile._id %>/friend?_method=PATCH" method="POST">
+            <button type="submit">Add Friend</button>
+          </form>
+        <% } %> 
+        <% if (!profile._id.equals(userProfile._id) && userProfile.friends?.includes(profile._id)) { %> 
+          <form action="/profiles/<%= profile._id %>/unfriend?_method=PATCH" method="POST">
+            <button type="submit">Remove Friend</button>
+          </form>
+        <% } %> 
+    </section>
+    <section class="friends-list">
+      <% profile.friends.forEach(friend => {  %> 
+        <div class="friend-info">
+          <a href="/profiles/<%= friend._id %>">
+            <% if (friend.avatar) { %>
+              <img class="friends-photo"
+                src="<%= friend.avatar %>"
+                alt="<%= friend.name %>"
+              />
+            <% } else { %>
+              <h2>No Dice!</h2>
+            <% } %>
+          </a>
+          <p><%= friend.name %></p>
         </div>
       <% }) %> 
-  </section>
-
+    </section>
+    <section class="album-container">
+    <% albums.forEach(album =>{ %>
+        <div class="album-card">
+          <div class="album-text">
+            <h2 class="artist"><%= album.artist %></h2>
+            <h3 class="title"><%= album.title %></h3>
+          </div>
+          <a href="/albums/<%= album.discogsId %>">
+            <img class="album-art" src="<%= album.imageUrl %>" alt="cover art">
+          </a>
+          </div>
+        <% }) %> 
+    </section>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>

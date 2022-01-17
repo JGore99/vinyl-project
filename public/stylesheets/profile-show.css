@@ -1,0 +1,83 @@
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.bio-details {
+  height: 6.5rem;
+  text-align: center;
+}
+
+.friends-list {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.friend-info {
+  text-align: center;
+}
+
+.friends-photo {
+  width: 5rem;
+  margin: 0rem 1rem;
+}
+
+
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 70%;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: .1rem;
+  margin: 2rem auto;
+  height: 100%;
+  justify-items: center
+  align-items: flex-start;
+   */
+} 
+
+.album-card {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgb(197, 197, 197);
+  border-radius: 3px 3px 0 0;
+  display: flex;
+  flex-flow: column;
+  width: 260px;
+  margin: 30px 5px;
+  
+}
+
+.album-art {
+  height: 260px;
+  width: 260px;
+  object-fit: cover;
+  margin: 0px auto -3px;
+  justify-content: flex-end;
+} 
+
+.album-art:hover {
+  transform: scale(1.02);
+}
+
+.album-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.artist, .title {
+  align-self: center;
+  padding: 0px 4px;
+}
+
+.artist {
+  font-size: 15px;
+}
