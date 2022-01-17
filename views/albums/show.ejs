@@ -1,16 +1,19 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<% { %>
+  <link rel="stylesheet" href="/stylesheets/album-show.css">
+<% } %>
 
-<main class="main-details">
+<main class="album-details-container">
   <section class="album-facts">
-    <div class="artist-title-cover">
+    <div class="album-info-and-cover">
       <div class="show-info">
         <h1><%= artist %></h1>
         <h2><%= albumTitle %></h2>
       </div>
       <img class="cover-art" src="<%= image %>" alt="cover art">
     </div>
-    <div class="track-list-add-collection">
+    <div class="track-list-container">
       <ol class="track-list">
         <% tracklist.forEach(track => { %>
           <li><%= track.title %></li> 
@@ -21,9 +24,12 @@
         <input type="text" name="artist" hidden value="<%= artist %>">
         <input type="text" name="title" hidden value="<%= albumTitle %>">
         <input type="text" name="imageUrl" hidden value="<%= image %>">
-        <button class="add-collection">Add To Collection</button>
       </form>
     </div>
+      <% if (!userHasAlbum) { %> 
+        <%- include("../partials/opinions") %> 
+        <button class="add-collection">Add To Collection</button>
+      <% } %>
   </section>
   <% if (album?.opinions.length) { %> 
     <%- include("../partials/opinions") %> 
