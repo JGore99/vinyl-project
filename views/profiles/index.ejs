@@ -1,15 +1,18 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<% { %>
+  <link rel="stylesheet" href="/stylesheets/profile-index.css">
+<% } %>
 
 <main>
-  <section class="all-users">
-    <h1>All the users</h1>
+  <section class="all-users-container">
+    <h1>All users</h1>
     <div class="all-users">
       <% profiles.forEach(profile => { %> 
         <div class="user-tile">
           <a href="/profiles/<%= profile._id %>">
             <% if (profile.avatar) { %> 
-              <img src="<%= profile.avatar %>" alt=" <%= profile.name %> ">
+              <img class="profile-photo" src="<%= profile.avatar %>" alt=" <%= profile.name %> ">
               <p><%= profile.name %> </p>
             <% } %> 
           </a>

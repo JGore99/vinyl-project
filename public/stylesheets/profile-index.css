@@ -1,0 +1,37 @@
+
+.all-users-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-users {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 85%;
+}
+
+.user-tile {
+  margin: 1rem;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 7rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .all-users {
+    margin-top: .5rem;
+    width: 95%;
+  }
+
+  .user-tile {
+    margin: 0.7rem;
+  }
+
+}

@@ -184,22 +184,6 @@ a:hover {
   border: 1px black solid;
 }
 
-
-/* ALBUM DETAILS */
-
-
-
-/* ALL USERS */
-
-.all-users {
-  margin-top: 5rem;
-  display: flex;
-}
-
-.user-tile {
-  margin: 2rem;
-  text-align: center;
-}
 /* -------------------MEDIA---------------------- */
 
 @media only screen and (max-width: 700px) {
