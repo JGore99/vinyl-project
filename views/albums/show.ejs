@@ -6,13 +6,11 @@
 
 <main class="album-details-container">
   <section class="album-facts">
-    <div class="album-info-and-cover">
-      <div class="show-info">
-        <h1><%= artist %></h1>
-        <h2><%= albumTitle %></h2>
+      <div class="album-info">
+        <h1 id="artist"><%= artist %></h1>
+        <h2 id="album-title"><%= albumTitle %></h2>
       </div>
       <img class="cover-art" src="<%= image %>" alt="cover art">
-    </div>
     <div class="track-list-container">
       <ol class="track-list">
         <% tracklist.forEach(track => { %>
@@ -31,12 +29,14 @@
         <button class="add-collection">Add To Collection</button>
       <% } %>
   </section>
-  <% if (album?.opinions.length) { %> 
-    <%- include("../partials/opinions") %> 
-    
-  <% } %> 
-    <% if (!userHasOpinion && userHasAlbum) { %> 
-      <%- include("../partials/opinion-form") %> 
+  <section class="opinion-container">
+    <% if (album?.opinions.length) { %> 
+      <%- include("../partials/opinions") %> 
+      
     <% } %> 
+      <% if (!userHasOpinion && userHasAlbum) { %> 
+        <%- include("../partials/opinion-form") %> 
+      <% } %> 
+  </section>
 </main>
 <%- include("../partials/footer") %>
