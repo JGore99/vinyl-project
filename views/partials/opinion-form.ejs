@@ -1,8 +1,8 @@
 
-<section>
+<section class="opinion-form-container">
   <h2>Thoughts on this album:</h2>
-  <form action="/opinions/<%= album?.id %>" method="POST">
-    <textarea name="content" cols="30" rows="10"></textarea>
-    <button type="submit">Submit</button>
+  <form class="opinion-form" action="/opinions/<%= album?.id %>" method="POST">
+    <textarea id="opinion-form-text" name="content" cols="30" rows="10"></textarea>
+    <button id="opinion-form-btn" type="submit">Submit</button>
   </form>
 </section>

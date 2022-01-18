@@ -1,5 +1,5 @@
 <% album?.opinions.forEach(opinion => { %>
-  <form class="opinion-form" action="/albums/<%= album.id %>/opinions/<%= opinion._id %>?_method=DELETE" method="POST">
+  <form class="opinion-container" action="/albums/<%= album.id %>/opinions/<%= opinion._id %>?_method=DELETE" method="POST">
     <div class="photo-delete-container">
       <a class="photo-container" href="/profiles/<%= opinion.author._id %>">
         <img class="opinion-photo" src="<%= opinion.author.avatar %>" alt="user photo">
