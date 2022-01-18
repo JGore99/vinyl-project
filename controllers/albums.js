@@ -84,8 +84,6 @@ function deleteOpinion(req, res) {
   })
 }
 
-
-
 export {
   search,
   show,

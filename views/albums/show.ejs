@@ -22,17 +22,15 @@
         <input type="text" name="artist" hidden value="<%= artist %>">
         <input type="text" name="title" hidden value="<%= albumTitle %>">
         <input type="text" name="imageUrl" hidden value="<%= image %>">
+        <% if (!userHasAlbum) { %> 
+          <button class="add-collection">Add To Collection</button>
+        <% } %>
       </form>
     </div>
-      <% if (!userHasAlbum) { %> 
-        <%- include("../partials/opinions") %> 
-        <button class="add-collection">Add To Collection</button>
-      <% } %>
   </section>
-  <section class="opinion-container">
+  <section class="opinion">
     <% if (album?.opinions.length) { %> 
       <%- include("../partials/opinions") %> 
-      
     <% } %> 
       <% if (!userHasOpinion && userHasAlbum) { %> 
         <%- include("../partials/opinion-form") %> 

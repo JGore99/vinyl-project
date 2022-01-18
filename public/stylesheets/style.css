@@ -39,6 +39,11 @@ body {
   font-size: 62.5%;
 }
 
+button {
+  border: none;
+  outline: none;
+}
+
 nav {
   background: var(--nav-background);
   background: var(--nav-gradient);
