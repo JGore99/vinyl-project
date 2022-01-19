@@ -24,6 +24,10 @@
   width: 7rem;
 }
 
+.profile-index-name {
+  color: black;
+}
+
 @media only screen and (max-width: 700px) {
   .all-users {
     margin-top: .5rem;
