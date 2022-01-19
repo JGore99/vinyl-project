@@ -16,7 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin-top: 1rem; */
+  margin-top: 1rem;
   width: 100%;
 }
 
@@ -33,6 +33,20 @@
 .friend-name {
   font-size: var(--text-xs);
   margin: 0;
+}
+
+.friend-btn {
+  background: var(--nav-background);
+  background: var(--btn-gradient);
+  border-top: 2px rgba(139, 0, 0, 0.9) solid; 
+  color: var(--nav-color); 
+  border-radius: 5px;
+  height: 3rem;
+}
+
+.friend-btn:hover {
+  border-top: none;
+  border-bottom: 2px rgba(139, 0, 0, 0.9) solid;
 }
 
 .album-container {

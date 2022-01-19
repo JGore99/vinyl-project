@@ -192,10 +192,15 @@
 #opinion-form-btn {
   background: var(--nav-background);
   background: var(--btn-gradient);
-  border-top: 2px rgba(139, 0, 0, 0.9) solid; 
+  border-top: 3px rgba(139, 0, 0, 0.9) solid; 
   color: var(--nav-color); 
   border-radius: 0px 0px 5px 5px;
   height: 3rem;
+}
+
+#opinion-form-btn:hover {
+  border-top: none;
+  border-bottom: 2px rgba(139, 0, 0, 0.9) solid;
 }
 
 @media only screen and (max-width: 800px) {
@@ -203,7 +208,6 @@
     margin: 20px 0 5px 0;
   }
  
-
   .album-info {
     align-items: flex-start;
     margin-bottom: 1rem;
