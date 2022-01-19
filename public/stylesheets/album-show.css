@@ -63,6 +63,10 @@
 }
 
 .add-collection {
+  background: var(--nav-background);
+  background: var(--btn-gradient);
+  border-top: 2px rgba(139, 0, 0, 0.9) solid; 
+  color: var(--nav-color); 
   font-size: var(--text-s);
   height: 3.5rem;
   width: 7rem;
@@ -73,6 +77,11 @@
   align-self: flex-end;
   margin-left: 2rem;
   /* margin: -1rem 0 4rem 2rem; */
+}
+
+.add-collection:hover {
+  border-top: none;
+  border-bottom: 2px rgba(139, 0, 0, 0.9) solid;
 }
 
 .collect-form {
